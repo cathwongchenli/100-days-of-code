@@ -1,0 +1,67 @@
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+userchoice = int(input("What do you choose? Type 0 for rock, 1 for paper or 2 for scissors,\n"))
+
+
+if userchoice == 0:
+    print(rock)
+if userchoice==1:
+    print(paper)
+if userchoice==2:
+    print(scissors)
+if userchoice>2:
+    print("Inavlid value.")
+
+if userchoice<3:
+    
+    list1 = [scissors,paper,rock]
+    computerchoice = random.choice(list1)
+    print("The computer chose:\n",computerchoice)
+
+    if userchoice == 0 and computerchoice == rock:
+        print("Draw.")
+    elif userchoice == 0 and computerchoice == scissors:
+        print("You win!")
+    elif userchoice == 0 and computerchoice == paper:
+        print("You lose.")
+
+    if userchoice == 1 and computerchoice == paper:
+        print("Draw.")
+    elif userchoice == 1 and computerchoice == rock:
+        print("You win!")
+    elif userchoice == 1 and computerchoice == scissors:
+        print("You lose.")
+    
+    if userchoice == 2 and computerchoice == scissors:
+        print("Draw.")
+    elif userchoice == 2 and computerchoice == paper:
+        print("You win!")
+    elif userchoice == 2 and computerchoice == rock:
+        print("You lose.")
